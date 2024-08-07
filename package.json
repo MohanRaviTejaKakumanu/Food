@@ -4,7 +4,8 @@
   "description": "\"I am frontend developer\"",
   "scripts": {
     "start": "parcel index.html",
-    "test": "jest"
+    "test": "jest",
+    "build": "parcel build index.html"
   },
   "author": "\"Ravi Teja\"",
   "license": "ISC",
