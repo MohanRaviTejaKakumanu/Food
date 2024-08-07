@@ -28,10 +28,13 @@ const RestaurantMenu = () => {
   }
 
   const { name, avgRating, costForTwoMessage, cuisines, totalRatingsString } =
-    restaurantMenu?.cards[2]?.card?.card?.info;
+    restaurantMenu?.cards[2]?.card?.card?.info ||
+    restaurantMenu?.cards[1]?.card?.card?.info;
 
   const { itemCards } =
     restaurantMenu?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2].card
+      ?.card ||
+    restaurantMenu?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1].card
       ?.card;
   console.log(itemCards);
   return (
