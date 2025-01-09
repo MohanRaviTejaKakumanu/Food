@@ -129,3 +129,7 @@
   flex-wrap: nowrap;
   align-items: center;
 }
+
+.user {
+  border: 2px solid black;
+}

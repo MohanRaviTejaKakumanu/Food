@@ -3,6 +3,7 @@ import RestaurantCards from "./RestaurantCards";
 import ShimmerUi from "./ShimmerUi";
 import { APP_API } from "../utils/constants";
 import { Link } from "react-router-dom";
+import { defaultAPIResponse } from "../utils/apiresponse";
 
 const Body = () => {
   const [listOfRestaurants, setlistOfRestaurants] = useState([]);
@@ -13,9 +14,16 @@ const Body = () => {
     fetchData();
   }, []);
 
+  const mockfetch = async (url) => {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve(defaultAPIResponse);
+      }, 500);
+    });
+  };
+
   const fetchData = async () => {
-    const data = await fetch(APP_API);
-    const json = await data.json();
+    const json = await mockfetch(APP_API);
 
     setlistOfRestaurants(
       json.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
